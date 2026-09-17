@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CINTEL • Technical Domain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="orb orb-a"></div><div class="orb orb-b"></div>
+  <main class="shell">
+    <aside class="side">
+      <div>
+        <div class="brand"><span class="brand-mark">C</span><span>CINTEL</span></div>
+        <div class="side-copy">
+          <p class="eyebrow">TECHNICAL DOMAIN</p>
+          <h2>Build.<br><span>Break.</span><br>Innovate.</h2>
+          <p>CINTEL Association is a student club for curious builders. Tell us what you know, what you want to learn, and where you want to contribute.</p>
+        </div>
+      </div>
+      <div class="side-footer">
+        <div class="progress-label"><span>REGISTRATION</span><strong>01 / 01</strong></div>
+        <div class="progress"><i></i></div>
+        <small>Your information is used only for club selection and communication.</small>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="topline"><span>TECHNICAL DOMAIN APPLICATION</span><span class="live"><i></i> OPEN</span></div>
+
+      <div id="formWrap">
+        <header class="heading">
+          <div>
+            <p class="eyebrow">LET'S GET TO KNOW YOU</p>
+            <h1>Tell us about <em>your tech.</em></h1>
+            <p>There are no perfect answers. Show us your curiosity, skills and the things you want to create.</p>
+          </div>
+          <div class="number">01</div>
+        </header>
+
+        <div id="formError" class="alert hidden" role="alert"></div>
+
+        <form id="registrationForm" novalidate>
+          <div class="section-title"><span>01</span> BASIC DETAILS</div>
+
+          <div class="row">
+            <div class="field">
+              <label for="name">FULL NAME <b>*</b></label>
+              <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required minlength="2">
+              <small id="nameError"></small>
+            </div>
+            <div class="field">
+              <label for="email">EMAIL ADDRESS <b>*</b></label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+              <small id="emailError"></small>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="year">CURRENT YEAR <b>*</b></label>
+              <select id="year" name="year" required>
+                <option value="">Choose your year</option><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option>
+              </select>
+              <small id="yearError"></small>
+            </div>
+            <div class="field">
+              <label for="experience">CODING EXPERIENCE <b>*</b></label>
+              <div class="unit-input"><input id="experience" name="experience" type="number" min="0" max="20" step="0.5" placeholder="0"><span>YEARS</span></div>
+              <small id="experienceError"></small>
+            </div>
+          </div>
+
+          <div class="section-title"><span>02</span> YOUR DIRECTION</div>
+
+          <fieldset class="field">
+            <legend>WHICH DOMAIN FEELS MOST LIKE YOU? <b>*</b></legend>
+            <div class="cards">
+              <label class="radio-card"><input type="radio" name="domain" value="Web Development" required><span><strong>WEB</strong><small>Sites & platforms</small></span></label>
+              <label class="radio-card"><input type="radio" name="domain" value="App Development"><span><strong>APP</strong><small>Mobile experiences</small></span></label>
+              <label class="radio-card"><input type="radio" name="domain" value="AI / ML"><span><strong>AI / ML</strong><small>Intelligence & data</small></span></label>
+              <label class="radio-card"><input type="radio" name="domain" value="Cybersecurity"><span><strong>CYBER</strong><small>Security & systems</small></span></label>
+            </div>
+            <small id="domainError"></small>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>WHAT CAN YOU WORK WITH? <b>*</b> <i>SELECT ANY</i></legend>
+            <div class="checks">
+              <label><input type="checkbox" name="skills" value="HTML/CSS/JS"><span>HTML / CSS / JS</span></label>
+              <label><input type="checkbox" name="skills" value="Flutter/Dart"><span>Flutter / Dart</span></label>
+              <label><input type="checkbox" name="skills" value="Python"><span>Python</span></label>
+              <label><input type="checkbox" name="skills" value="Kotlin/Android"><span>Kotlin / Android</span></label>
+              <label><input type="checkbox" name="skills" value="UI/UX"><span>UI / UX</span></label>
+            </div>
+            <small id="skillsError"></small>
+          </fieldset>
+
+          <div class="row">
+            <div class="field">
+              <label for="availableDate">AVAILABLE FROM <b>*</b></label>
+              <input id="availableDate" name="availableDate" type="date" required>
+              <small id="availableDateError"></small>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="about">WHAT DO YOU WANT TO BUILD OR LEARN?</label>
+            <textarea id="about" name="about" maxlength="500" rows="4" placeholder="A project, an experiment, something weird..."></textarea>
+            <div class="counter"><span id="count">0</span> / 500</div>
+          </div>
+
+          <div class="submit-line">
+            <p><b>*</b> Required fields</p>
+            <button id="submitButton" type="submit"><span id="buttonText">SUBMIT APPLICATION <b>↗</b></span><span id="spinner" class="spinner hidden"></span></button>
+          </div>
+        </form>
+      </div>
+
+      <div id="successState" class="success hidden">
+        <div class="success-mark">✓</div>
+        <p class="eyebrow">APPLICATION RECEIVED</p>
+        <h2>You're on the list.</h2>
+        <p>Your response has been securely saved. Keep building — we'll be in touch.</p>
+        <button id="anotherResponse" class="again">SUBMIT ANOTHER ↗</button>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
